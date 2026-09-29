@@ -1,6 +1,7 @@
 " my default favorite colorscheme from vim
 set termguicolors
-try | colorscheme catppuccin | catch | colorscheme slate | endtry
+packadd! dracula                      " start packages load after vimrc, so load it now
+try | colorscheme dracula | catch | colorscheme slate | endtry
 
 " create vim directories if missing
 for s:dir in [$HOME . '/.vim/swp', $HOME . '/.vim/undo']
@@ -13,7 +14,7 @@ set directory=$HOME/.vim/swp//        " // appends full path to avoid name colli
 
 " set ruler size of black gray in 80cc
 set colorcolumn=100                   " by default the column must be 100 becuse i like it
-highlight ColorColumn guibg=#45475a   " set the line ruler's color column
+highlight ColorColumn guibg=#44475a   " set the line ruler's color column
 
 " visual behavior
 set number                            " show absolute line numbers
@@ -60,10 +61,10 @@ endfunction
 
 augroup vimrc
   autocmd!
-  " save session on exit
+  " strip trailing whitespace on save
   autocmd BufWritePre * :%s/\s\+$//e
 
-  " strip trailing whitespace on save
+  " save session on exit
   autocmd VimLeave * mksession! ~/.vim/session.vim
 
   " skip restore when a file is passed as argument
