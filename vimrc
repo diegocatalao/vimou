@@ -1,7 +1,8 @@
 " my default favorite colorscheme from vim
 set termguicolors
-packadd! dracula                      " start packages load after vimrc, so load it now
-try | colorscheme dracula | catch | colorscheme slate | endtry
+packadd! catppuccin                   " start packages load after vimrc, so load them now
+packadd! dracula                      " alternative theme: `:colorscheme dracula`
+try | colorscheme catppuccin_mocha | catch | colorscheme slate | endtry
 
 " create vim directories if missing
 for s:dir in [$HOME . '/.vim/swp', $HOME . '/.vim/undo']
@@ -14,7 +15,7 @@ set directory=$HOME/.vim/swp//        " // appends full path to avoid name colli
 
 " set ruler size of black gray in 80cc
 set colorcolumn=100                   " by default the column must be 100 becuse i like it
-highlight ColorColumn guibg=#44475a   " set the line ruler's color column
+highlight ColorColumn guibg=#45475a   " set the line ruler's color column
 
 " visual behavior
 set number                            " show absolute line numbers
