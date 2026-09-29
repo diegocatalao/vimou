@@ -40,6 +40,7 @@ set backspace=indent,eol,start        " allow backspace over indentation, line b
                                       " pre-insert text
 set clipboard=unnamed                 " sync with system clipboard
 set mouse=a                           " enable mouse in all modes
+set ttymouse=sgr                      " tmux TERM makes vim pick 'xterm', which ignores drags
 set wildmenu                          " show completion menu on the command line
 
 " by default, the tabspace is 2 for every language
